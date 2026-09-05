@@ -1,0 +1,42 @@
+<%- include("partials/header.ejs") %>
+    <!-- From Uiverse.io by MuhammadHasann -->
+    <div class="cover">
+        <div class="action">
+            <a href="/create" class="cart-button">
+                <span>Summarize new book</span>
+            </a>
+        </div>
+        <% if (locals.data && data.length > 0) { %>
+            <div class="title">
+                <span>Summarized Books</span>
+            </div>
+            <% data.forEach(d=> {%>
+
+                <div class="card">
+                    <div class="image_container">
+                        <img src="" alt="">
+                    </div>
+                    <div class="title">
+                        <span>
+                            <%= d.book_title %>
+                        </span>
+                    </div>
+
+                    <div class="action">
+                        <button class="cart-button">
+
+                            <span>Read</span>
+                        </button>
+                    </div>
+                </div>
+                <%}); %>
+                    <%}else{%>
+                        <div class="title">
+                            <span>You have not summarized any book you have read</span>
+
+                        </div>
+
+                        <% } %>
+    </div>
+
+    <%- include("partials/footer.ejs") %>
